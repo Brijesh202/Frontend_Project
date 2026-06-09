@@ -1,3 +1,8 @@
+*{
+    box-sizing: border-box;
+}
+
+
 body{
     background-color: rgba(72, 163, 0, 0.07);
     font-family: "Poppins", sans-serif;
@@ -43,6 +48,7 @@ main{
     height: 30px;
     background-color: rgba(72, 163, 0, 0.1);
     border-radius: 15px;
+    margin-bottom: 30px;
 }
 
 .progress-value{
@@ -62,7 +68,9 @@ main{
 .error-label{
     font-size: 14px;
     color: rgba(255, 81, 81, 1);
-    margin-block: 20px;
+    margin-top: 4px;
+    position: absolute;
+    display: none;
 }
 
 .goal-container{
@@ -83,6 +91,13 @@ main{
     border-radius: 50%;
     flex-shrink: 0;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check-icon{
+    display: none;
 }
 
 
@@ -95,6 +110,7 @@ main{
     /* background-color: black; */
     align-self: stretch;
     width: 100%;
+    font-weight: 500;
 }
 
 .goal-input::placeholder{
@@ -113,6 +129,22 @@ main{
     color: rgba(133, 133, 133, 1);
     margin-top: 64px;
 }
+
+.completed .custom-checkbox{
+    background-color: rgba(72, 163, 0, 1);
+    border-color: rgba(72, 163, 0, 1);
+}
+
+
+.completed .check-icon{
+    display: block;
+}
+
+.completed .goal-input{
+    color: rgba(72, 163, 0, 1);
+    text-decoration: line-through;
+}
+
 
 
 @media(max-width: 768px){
