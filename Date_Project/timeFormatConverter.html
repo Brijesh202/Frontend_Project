@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Project</title>
+</head>
+<body>
+    <form>
+        <input type="number" placeholder="Enter time in ms" value="0">
+        <button>Convert</button>
+    </form>
+
+    <p class="local">Local Zone: <span></span></p>
+    <p class="utc">UTC Zone: <span></span></p>
+    <p class="iso">ISO Zone: <span></span></p>
+</body>
+
+<script>
+    const form = document.querySelector('form');
+    const input = document.querySelector('input');
+    const local = document.querySelector('.local span');
+    const utc = document.querySelector('.utc span');
+    const iso = document.querySelector('.iso span');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const timeStamp = Number(input.value);
+        const date = new Date(timeStamp);
+        local.innerText = date.toLocaleString('en-GB', {dateStyle: 'full', timeStyle: 'full'});
+        utc.innerText = date.toUTCString();
+        iso.innerText = date.toISOString();
+    })
+</script>
+</html>
